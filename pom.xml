@@ -5,11 +5,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>Lesson-01-JA-HW</groupId>
-	<artifactId>Lesson-01-JA-HW</artifactId>
-	<version>unit testing</version>
+	<groupId>Lesson-02ja</groupId>
+	<artifactId>Lesson-02ja</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
-	<name>Lesson-01-JA-HW</name>
+	<name>Lesson-02ja</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
@@ -21,9 +21,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.18</version>
 		</dependency>
 	</dependencies>
 
