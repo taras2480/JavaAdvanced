@@ -1,142 +1,114 @@
 package ua.lviv.lgs;
 
-import java.sql.SQLException;
+
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.Scanner;
+
+import org.apache.log4j.Logger;
 
 public class Application {
-	public static void main(String[] args)
-			throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
-
-		System.out.println("Таблиця Author\n $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
-
-		AuthorOfBookDao authorOfBookDao = new AuthorOfBookDao(ConnectionUtils.openConnection());
-
-		// READ-ALL
-		authorOfBookDao.readAll().forEach(System.out::println);
-		System.out.println("************************************************\n");
-
-		List<AuthorOfBook> listOfauthorOfBook = new ArrayList<>();
-
-		listOfauthorOfBook.add(new AuthorOfBook("Михайло", "Булгаков", "ще не було", "1891-05-12"));
-		listOfauthorOfBook.add(new AuthorOfBook("Василь", "Шкляр", "shklo@ukr.net", "1951-06-10"));
-
-			// INSERT
-			listOfauthorOfBook.forEach(authorOfBook -> {
-				try {
-					authorOfBookDao.insert(authorOfBook);
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			});
-
-		authorOfBookDao.readAll().forEach(System.out::println);
-		System.out.println("************************************************\n");
-
-		// READ-ById
-		AuthorOfBook authorOfBookBD = authorOfBookDao.read(5);
-		System.out.println(authorOfBookBD);
-
-		// UPDATE - ById
-		authorOfBookBD.setLast_name(authorOfBookBD.getLast_name() + "-DeLordRossi");
-		authorOfBookDao.update(authorOfBookBD);
-
-		// READ-ALL
-		authorOfBookDao.readAll().forEach(System.out::println);
-		System.out.println("************************************************\n");
-
-		
-		// DELETE Не працює, оскільки база даних взята з мого уроку по MySQL, а дана таблиця є
-		// батьківська
-		
-		authorOfBookDao.delete(4);
+	private static Scanner sc = new Scanner(System.in);
+	private static Cinema cinema = new Cinema(new Time(10, 0), new Time(22, 0));
 	
-		authorOfBookDao.readAll().forEach(System.out::println);
-		System.out.println("************************************************\n");
+	
 
-		System.out.println("Таблиця Book\n $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
-
-		BookDao bookDao = new BookDao(ConnectionUtils.openConnection());
-
-		// READ-ALL
-		bookDao.readAll().forEach(System.out::println);
-		System.out.println("************************************************\n");
-
-		List<Book> listBook = new ArrayList<>();
-
-		listBook.add(new Book("Кря-кря", "дитяча", 50, "978-617-12-0092-013", 20));
-		listBook.add(new Book("Червона книга", "наукова", 700, "978-617-12-0092-02", 16));
-
-		// INSERT - не працює, оскільки використана таблиця є дочірна з існуючої бази данних, складена під час навчання по MySql
-		listBook.forEach(book -> {
-			try {
-				bookDao.insert(book);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		});
-		bookDao.readAll().forEach(System.out::println);
-		System.out.println("************************************************\n");
-
-		// READ-ById
-		Book bookBD = bookDao.read(5);
-		System.out.println(bookBD);
-
-				// UPDATE - ById
-				bookBD.setName(bookBD.getName() + "-DeLordRossi");
-				bookDao.update(bookBD);
-			
-//				
-				bookDao.readAll().forEach(System.out::println);
-						System.out.println("************************************************\n");
-
-		// Delete - теж не працює через повязані таблиці
-
-		bookDao.delete(4);
-		// READ-ALL
-				bookDao.readAll().forEach(System.out::println);
-				System.out.println("************************************************\n");
-
-		System.out.println("Таблиця Genre\n $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
-
-		GenreDao genreDao = new GenreDao(ConnectionUtils.openConnection());
-
-		// READ-ALL
-		genreDao.readAll().forEach(System.out::println);
-		System.out.println("************************************************\n");
-
-		// Insert
-		List<Genre> listGenre = new ArrayList<>();
-
-		listGenre.add(new Genre("Наука"));
-		listGenre.add(new Genre("Спорт"));
-
-		listGenre.forEach(genre -> {
-			try {
-				genreDao.insert(genre);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		});
+	public static void main(String[] args) {
 		
-		genreDao.readAll().forEach(System.out::println);
-		System.out.println("************************************************\n");
+		//Case 1 - writting warn, case 2,3 - written info,Class time - writting Error
 
-		// READ-ById
-		Genre genreBD = genreDao.read(5);
-		System.out.println(genreBD);
+		while (true) {
+			System.out.println("Menu: ");
+			System.out.println("натисніть 1, щоб додати фільм");
+			System.out.println("Натисніть 2, щоб видаити фільм");
+			System.out.println("Натисніть 3, щоб додати сеанс");
+			System.out.println("Натисніть 4, щоб видалити сеанс");
+			System.out.println("Натисніть 5, щоб побачити сеанси певного фільму");
+			
+			
 
-		// UPDATE - ById
-		genreBD.setName(genreBD.getName() + "-DeLordRossi");
-		genreDao.update(genreBD);
+			switch (sc.nextLine()) {
 
-		genreDao.readAll().forEach(System.out::println);
-		System.out.println("************************************************\n");
+			case "1":
+				Log.warn("Hours has not to be less then 0 or more then 24, minutes has not to be less then 0 or more then 60");
+				Movie newMovie = newMovie();
+				ArrayList<Time> seancesTime = new ArrayList<>();
+				while (true) {
+					System.out.println("Чи бажаєте додати ще сеанс даного фільму?('y' or 'n'):");
+					String ind = sc.nextLine();
+					if (ind.equals("n")) {
+						break;
+					} else if (ind.equals("y")) {
+						System.out.println("Введіть час сеансу");
+						Time time = new Time(sc.nextInt(), sc.nextInt());
+						while (cinema.getOpen().compareTo(time) > 0 || cinema.getClose().compareTo(time) < 0) {
+							System.out.println("На жаль, кінотеатр зачинено в такий час, введіть інший час");
+							time = new Time(sc.nextInt(), sc.nextInt());
+						}
+						seancesTime.add(time);
+						sc.nextLine();
+					}
 
-		// Delete
+				}
+				Time[] arrSeanceTime = new Time[seancesTime.size()];
+				cinema.addMovie(newMovie, seancesTime.toArray(arrSeanceTime));
+				Log.info("Додано один фільм"+newMovie);
+				break;
 
-		genreDao.delete(4);
+			case "2":
+				System.out.println("Виберіть фільм, щоб його видалити");
 
+				cinema.removeMovie(chooseMovie());
+				Log.info("Увага! Видалено фільм"+chooseMovie());
+				break;
+			
+			case "4":
+				System.out.println("Виберіть день, коли видалити сеанс");
+				System.out.println(Arrays.toString(Days.values()));
+				String ind = sc.nextLine();
+				Schedule schedule = cinema.getSchedules().get(Days.valueOf(ind));
+				System.out.println("Виберіть сеанс, щоб видалити");
+				ArrayList<Seance> seanceList = new ArrayList<>(schedule.getSeances());
+				for (int i = 0; i < seanceList.size(); i++) {
+					System.out.println(i + " - " + seanceList.get(i));
+				}
+				int choise = sc.nextInt();
+				sc.nextLine();
+				Seance seanceDel = seanceList.get(choise);
+				cinema.removeSeance(seanceDel, ind);
+
+				break;
+			case "5":
+				System.out.println("Виберіть фільм, щоб показати його сеанси");
+				Movie movieToShow = chooseMovie();
+				for (int i = 0; i < Days.values().length; i++) {
+					System.out.println(Days.values()[i]);
+					cinema.getSchedules().get(Days.values()[i]).getSeances().stream()
+							.filter(x -> x.getMovie().equals(movieToShow)).forEach(System.out::println);
+					System.out.println("----------------------------------------");
+				}
+				break;
+
+			}
+
+		}
 	}
 
+	public static Movie newMovie() {
+		System.out.println("Enter movie title:");
+		String title = sc.nextLine();
+		System.out.println("Enter movie duration (hours first then minutes):");
+		Time duration = new Time(sc.nextByte(), sc.nextByte());
+		sc.nextLine();
+
+		return new Movie(title, duration);
+	}
+
+	public static Movie chooseMovie() {
+		cinema.getMoviesLibrary().forEach(x -> System.out.println(x.getTitle()));
+		String movieTitle = sc.nextLine();
+		Movie movie = cinema.getMoviesLibrary().stream().filter(x -> x.getTitle().equalsIgnoreCase(movieTitle))
+				.findFirst().get();
+		return movie;
+	}
 }
