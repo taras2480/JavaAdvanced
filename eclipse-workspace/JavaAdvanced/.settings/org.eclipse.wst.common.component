@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="Java_Advanced">
+    <wb-module deploy-name="JavaAdvanced">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
-        <property name="context-root" value="Java_Advanced"/>
-        <property name="java-output-path" value="/Java_Advanced/target/classes"/>
+        <property name="java-output-path" value="/JavaAdvanced/target/classes"/>
+        <property name="context-root" value="JavaAdvanced"/>
     </wb-module>
 </project-modules>

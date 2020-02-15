@@ -32,14 +32,19 @@ public class RegistrationServlet extends HttpServlet {
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String password = request.getParameter("password");
+		
 
 		if (!email.isEmpty() && !firstName.isEmpty() && !lastName.isEmpty() && !password.isEmpty()) {
 
 			userService.create(new User(email, firstName, lastName, UserRole.USER.toString(), password));
 
 		}
+		
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF8");
+		response.getWriter().write("Success");
 
-		request.getRequestDispatcher("cabinet.jsp").forward(request, response);
+		
 	}
 
 }
