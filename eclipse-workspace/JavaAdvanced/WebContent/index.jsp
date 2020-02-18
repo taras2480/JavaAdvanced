@@ -78,10 +78,10 @@
 		
 	<script src="js/login.js"></script>
 	
+<jsp:include page="footer.jsp"></jsp:include>
 
 
-
-	<jsp:include page="footer.jsp"></jsp:include>
+	
 
 
 
