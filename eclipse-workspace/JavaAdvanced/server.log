@@ -9,3 +9,7 @@
 2020-02-15 01:59:03 ERROR UserDaoImpl:162 - java.sql.SQLException: Illegal operation on empty result set.
 2020-02-15 01:59:12 ERROR UserDaoImpl:162 - java.sql.SQLException: Illegal operation on empty result set.
 2020-02-15 02:05:08 ERROR UserDaoImpl:162 - java.sql.SQLException: Illegal operation on empty result set.
+2020-02-15 23:30:02 ERROR UserDaoImpl:162 - java.sql.SQLException: Illegal operation on empty result set.
+2020-02-17 23:34:34 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'name' cannot be null
+2020-02-17 23:35:03 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'name' cannot be null
+2020-02-17 23:36:59 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'name' cannot be null

@@ -28,9 +28,7 @@
 			<div class=" col-sm-4 col-md col-sm-4  col-12 col">
 				<h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
 				<!--headin5_amrc-->
-				<p class="mb10">Lorem Ipsum is simply dummy text of the printing
-					and typesetting industry. Lorem Ipsum has been the industry's
-					standard dummy text ever since the 1500s</p>
+				<p class="mb10">since the 1500s</p>
 				<p>
 					<i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35
 				</p>
@@ -52,9 +50,7 @@
 					<li><a href="http://webenlance.com">Image Rectoucing</a></li>
 					<li><a href="http://webenlance.com">Clipping Path</a></li>
 					<li><a href="http://webenlance.com">Hollow Man Montage</a></li>
-					<li><a href="http://webenlance.com">Ebay & Amazon</a></li>
-					<li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
-					<li><a href="http://webenlance.com">Image Cropping</a></li>
+					
 				</ul>
 				<!--footer_ul_amrc ends here-->
 			</div>
@@ -68,9 +64,7 @@
 					<li><a href="http://webenlance.com">Shadows & Mirror
 							Reflection</a></li>
 					<li><a href="http://webenlance.com">Logo Design</a></li>
-					<li><a href="http://webenlance.com">Vectorization</a></li>
-					<li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
-					<li><a href="http://webenlance.com">Image Cropping</a></li>
+					<
 				</ul>
 				<!--footer_ul_amrc ends here-->
 			</div>
