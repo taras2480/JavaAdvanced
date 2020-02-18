@@ -13,3 +13,8 @@
 2020-02-17 23:34:34 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'name' cannot be null
 2020-02-17 23:35:03 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'name' cannot be null
 2020-02-17 23:36:59 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'name' cannot be null
+2020-02-18 22:44:06 ERROR UserDaoImpl:162 - java.sql.SQLException: Illegal operation on empty result set.
+2020-02-19 00:45:13 ERROR BucketDaoImpl:49 - java.sql.SQLSyntaxErrorException: Unknown column 'purcase_date' in 'field list'
+2020-02-19 00:47:52 ERROR BucketDaoImpl:49 - java.sql.SQLSyntaxErrorException: Unknown column 'purchase_date' in 'field list'
+2020-02-19 00:56:00 ERROR BucketDaoImpl:49 - java.sql.SQLSyntaxErrorException: Unknown column 'purchase_date' in 'field list'
+2020-02-19 00:58:59 ERROR BucketDaoImpl:49 - java.sql.SQLSyntaxErrorException: Unknown column 'purchase_date' in 'field list'

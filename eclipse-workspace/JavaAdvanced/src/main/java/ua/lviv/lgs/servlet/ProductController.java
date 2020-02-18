@@ -16,7 +16,6 @@ import ua.lviv.lgs.service.impl.ProductServiceImpl;
 public class ProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ProductService productService = ProductServiceImpl.getProductService();
-	// for get recourse (product)
 
 	// for creating recourse (product)
 	@Override
@@ -29,30 +28,33 @@ public class ProductController extends HttpServlet {
 
 		Product product = new Product(name, description, getvalidatedPrice(price));
 		productService.create(product);
-		
+
 		response.setContentType("text");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write("Success");
 
 	}
-	
+
 	private double getvalidatedPrice(String price) {
 		if (price == null || price.isEmpty()) {
-			
+
 			return 0.0;
-			
+
 		}
 		return Double.parseDouble(price);
-		
-		
-		
+
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String productId = request.getParameter("id");
+
+		Product product = productService.read(Integer.parseInt(productId));
+
+		request.setAttribute("product", product);
+		request.getRequestDispatcher("singleProduct.jsp").forward(request, response);
 	}
 
 	// for update recourse (product)
