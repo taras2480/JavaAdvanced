@@ -16,7 +16,7 @@ import ua.lviv.lgs.service.ProductService;
 import ua.lviv.lgs.service.impl.ProductServiceImpl;
 
 @WebServlet("/products")
-public class ProductsServlet extends HttpServlet {
+public class ProductsController extends HttpServlet {
 	private ProductService productService = ProductServiceImpl.getProductService();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

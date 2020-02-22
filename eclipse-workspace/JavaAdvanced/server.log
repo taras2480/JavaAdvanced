@@ -18,3 +18,28 @@
 2020-02-19 00:47:52 ERROR BucketDaoImpl:49 - java.sql.SQLSyntaxErrorException: Unknown column 'purchase_date' in 'field list'
 2020-02-19 00:56:00 ERROR BucketDaoImpl:49 - java.sql.SQLSyntaxErrorException: Unknown column 'purchase_date' in 'field list'
 2020-02-19 00:58:59 ERROR BucketDaoImpl:49 - java.sql.SQLSyntaxErrorException: Unknown column 'purchase_date' in 'field list'
+2020-02-20 21:01:44 ERROR BucketServiceImpl:25 - java.sql.SQLException: The server time zone value '��������� (����)' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+2020-02-20 21:04:01 ERROR BucketServiceImpl:25 - java.sql.SQLException: The server time zone value '��������� (����)' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+2020-02-21 22:30:56 ERROR ProductDaoImpl:128 - com.mysql.cj.jdbc.exceptions.CommunicationsException: The last packet successfully received from the server was 90 193 181 milliseconds ago. The last packet sent successfully to the server was 90 193 181 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+2020-02-21 22:31:33 ERROR ProductDaoImpl:128 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-21 22:31:52 ERROR ProductDaoImpl:128 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-21 23:14:28 ERROR ProductDaoImpl:128 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-21 23:14:41 ERROR ProductDaoImpl:128 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-21 23:30:05 ERROR ProductDaoImpl:128 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-21 23:30:11 ERROR ProductDaoImpl:128 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-21 23:33:24 ERROR ProductDaoImpl:128 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-21 23:41:18 ERROR ProductDaoImpl:128 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-21 23:43:26 ERROR ProductDaoImpl:128 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-21 23:45:00 ERROR ProductDaoImpl:128 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-21 23:48:04 ERROR ProductDaoImpl:128 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-21 23:48:52 ERROR ProductDaoImpl:128 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-22 00:12:58 ERROR ProductDaoImpl:50 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-22 00:17:32 ERROR ProductDaoImpl:50 - java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+2020-02-22 00:22:05 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'description' cannot be null
+2020-02-22 00:29:49 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'description' cannot be null
+2020-02-22 00:40:07 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'description' cannot be null
+2020-02-22 00:41:42 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'description' cannot be null
+2020-02-22 00:48:51 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'description' cannot be null
+2020-02-22 01:19:31 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'description' cannot be null
+2020-02-22 01:20:07 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'description' cannot be null
+2020-02-23 00:54:16 ERROR UserDaoImpl:53 - java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'gggg' for key 'email_UNIQUE'

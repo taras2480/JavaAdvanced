@@ -11,8 +11,8 @@
 
 </head>
 <body>
-	<jsp:include page="header.jsp"></jsp:include>
 	
+	<jsp:include page="header.jsp"></jsp:include>
 
 
 
@@ -23,7 +23,7 @@
 
 	</div>
 
-	<jsp:include page="footer.jsp"></jsp:include>
+	
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -45,6 +45,7 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 	<script src="js/header.js"></script>
+	<jsp:include page="footer.jsp"></jsp:include>
 	<script src="js/cabinet.js"></script>
 
 

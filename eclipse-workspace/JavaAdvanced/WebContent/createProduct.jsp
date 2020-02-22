@@ -25,15 +25,15 @@
 	<div class="container-fluid">
 		<div class="row">
 
-			<form class="createProduct">
+			<form class="createProduct " >
 				<div class="form-group">
 					<input type="text" class="form-control productName" 
 						placeholder="Enter name magazine">
 				</div>
 
 				<div class="form-group">
-					<input type="text" class="form-control productDescription" 
-						placeholder="Enter description">
+					<textarea class="form-control productDescription" 
+						placeholder="Enter description" style="height:300px"></textarea>
 				</div>
 
 				<div class="form-group">
@@ -43,7 +43,7 @@
 				
 				
 
-				<button class="btn btn-primary createProduct">Submit</button>
+				<button class="btn btn-primary createProduct ">Submit</button>
 			</form>
 
 		</div>

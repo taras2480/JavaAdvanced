@@ -3,7 +3,7 @@ $("button.createProduct")
 				function() {
 					
 					var name = $("form.createProduct input.productName").val();
-					var description = $("form.createProduct input.productDescription").val();
+					var description = $("form.createProduct textarea.productDescription").val();
 					var price = $("form.createProduct input.productPrice").val();
 				
 						var product = {
