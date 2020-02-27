@@ -1,0 +1,20 @@
+diff a/.config/jgit/config b/.config/jgit/config	(rejected hunks)
+@@ -1,18 +0,0 @@
+-[filesystem "192.168.8.104|Oracle Corporation|1.8.0_231|-1095978657"]
+-	timestampResolution = 1001 microseconds
+-	minRacyThreshold = 0 nanoseconds
+-[filesystem "WIN-0IVGTMG71MT|Oracle Corporation|1.8.0_231|-1095978657"]
+-	timestampResolution = 1001 microseconds
+-	minRacyThreshold = 0 nanoseconds
+-[filesystem "192.168.8.101|Oracle Corporation|1.8.0_231|-1095978657"]
+-	timestampResolution = 1001 microseconds
+-	minRacyThreshold = 0 nanoseconds
+-[filesystem "WIN-0IVGTMG71MT|Oracle Corporation|1.8.0_241|-1095978657"]
+-	timestampResolution = 1001 microseconds
+-	minRacyThreshold = 0 nanoseconds
+-[filesystem "192.168.8.104|Oracle Corporation|1.8.0_241|-1095978657"]
+-	timestampResolution = 1001 microseconds
+-	minRacyThreshold = 0 nanoseconds
+-[filesystem "192.168.8.101|Oracle Corporation|1.8.0_241|-1095978657"]
+-	timestampResolution = 1001 microseconds
+-	minRacyThreshold = 0 nanoseconds
