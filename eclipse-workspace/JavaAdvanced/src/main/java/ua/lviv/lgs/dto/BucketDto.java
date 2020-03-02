@@ -7,7 +7,7 @@ public class BucketDto {
 	public String name;
 	public String description;
 	public Double price;
-	public Integer bucketId;
+	public String bucketId;
 	public Date purchase_date;
 
 }

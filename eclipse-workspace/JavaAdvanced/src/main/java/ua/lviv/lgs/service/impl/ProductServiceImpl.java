@@ -1,6 +1,5 @@
 package ua.lviv.lgs.service.impl;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -21,12 +20,7 @@ public class ProductServiceImpl implements ProductService {
 
 	private ProductServiceImpl() {
 
-		try {
-			productDAO = new ProductDaoImpl();
-		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
-
-			LOGGER.error(e);
-		}
+		productDAO = new ProductDaoImpl();
 
 	}
 

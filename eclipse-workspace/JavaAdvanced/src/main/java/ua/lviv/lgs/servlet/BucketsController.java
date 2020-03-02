@@ -21,14 +21,10 @@ import ua.lviv.lgs.service.ProductService;
 import ua.lviv.lgs.service.impl.BucketServiceImpl;
 import ua.lviv.lgs.service.impl.ProductServiceImpl;
 
-/**
- * Servlet implementation class BucketControllers
- */
+
 @WebServlet("/buckets")
 public class BucketsController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    
+	 
 	private	BucketService bucketService = BucketServiceImpl.getBucketService();
 	private ProductService productService = ProductServiceImpl.getProductService();
 	
@@ -50,9 +46,9 @@ public class BucketsController extends HttpServlet {
 		return	buckets.stream().map(bucket->{
 			BucketDto bucketDto = new BucketDto();
 			bucketDto.bucketId = bucket.getId();
-			bucketDto.purchase_date = bucket.getPurchase_date();
+			bucketDto.purchase_date = bucket.getPurchaseDate();
 		   
-			Product product = idToProduct.get(bucket.getProduct_id());
+			Product product = idToProduct.get(bucket.getProduct().getId());
 		    bucketDto.name = product.getName();
 		    bucketDto.description = product.getDescription();
 		    bucketDto.price = product.getPrice();

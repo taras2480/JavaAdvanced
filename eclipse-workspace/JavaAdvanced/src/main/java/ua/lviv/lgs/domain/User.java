@@ -1,37 +1,47 @@
 package ua.lviv.lgs.domain;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="user")
 public class User {
-	
+	@Id
+	@GeneratedValue
 	private Integer id;
+	
+	@Column
 	private String email;
+	
+	@Column(name="first_name")
 	private String firstName;
+	
+	@Column(name="last_name")
 	private String lastName;
+	
+	@Column(name="role")
 	private String role;
+	
+	@Column(name="password")
 	private String password;
 	
-	
-	
-	public User(String email, String firstName, String lastName, String password) {
-		super();
-		this.email = email;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.password = password;
-	}
+	public User() {}
 
-	public User(String email, String firstName, String lastName, String role, String password) {
-		super();
+	public User(Integer id, String email, String firstName, String lastName, String role, String password) {
+		this.id = id;
 		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.role = role;
 		this.password = password;
-		
 	}
 
-	public User(Integer id, String email, String firstName, String lastName, String role, String password) {
+	public User(String email, String firstName, String lastName, String role, String password) {
 		super();
-		this.id = id;
 		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -147,35 +157,5 @@ public class User {
 		return "User [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName + ", role="
 				+ role + ", password=" + password + "]";
 	}
-	
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
-	
-	
-	
-	
-	
-	

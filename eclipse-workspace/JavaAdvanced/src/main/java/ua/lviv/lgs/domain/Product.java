@@ -1,20 +1,38 @@
 package ua.lviv.lgs.domain;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "product")
 public class Product {
-	
+
+	@Id
+	@GeneratedValue
 	private Integer id;
+
+	@Column
 	private String name;
+
+	@Column
 	private String description;
+
+	@Column
 	private Double price;
-	
-	public Product(String name, String description, Double price) {
+
+	public Product() {
+	}
+
+	public Product(Integer id, String name, String description, Double price) {
+		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.price = price;
 	}
 
-	public Product(Integer id, String name, String description, Double price) {
-		this.id = id;
+	public Product(String name, String description, Double price) {
 		this.name = name;
 		this.description = description;
 		this.price = price;
@@ -99,9 +117,4 @@ public class Product {
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + "]";
 	}
-	
-	
-	
-	
-	
 }

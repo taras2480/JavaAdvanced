@@ -1,6 +1,5 @@
 package ua.lviv.lgs.service.impl;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -13,18 +12,11 @@ import ua.lviv.lgs.service.UserService;
 public class UserServiceImpl implements UserService {
 
 	private UserDAO userDAO;
-	private static Logger LOGGER = Logger.getLogger(AdressServiceImpl.class);
+	private static Logger LOGGER = Logger.getLogger(UserServiceImpl.class);
 	private static UserServiceImpl userServiceImpl;
 
 	private UserServiceImpl() {
-
-		try {
-			userDAO = new UserDaoImpl();
-		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
-
-			LOGGER.error(e);
-		}
-
+		userDAO = new UserDaoImpl();
 	}
 
 	public static UserService getUserService() {

@@ -43,3 +43,4 @@
 2020-02-22 01:19:31 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'description' cannot be null
 2020-02-22 01:20:07 ERROR ProductDaoImpl:50 - java.sql.SQLIntegrityConstraintViolationException: Column 'description' cannot be null
 2020-02-23 00:54:16 ERROR UserDaoImpl:53 - java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'gggg' for key 'email_UNIQUE'
+2020-03-02 11:56:09 ERROR AdressServiceImpl:25 - java.sql.SQLException: The server time zone value '��������� (����)' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
