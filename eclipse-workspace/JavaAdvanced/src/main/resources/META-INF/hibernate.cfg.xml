@@ -7,14 +7,18 @@
 
 		<property name="hbm2ddl.auto">update</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Lesson14HW</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/lesson15</property>
 		<property name="hibernate.connection.username">aviator</property>
 		<property name="hibernate.connection.password">ornament24</property>
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
-		<mapping resource="Cart.hbm.xml" />
-		<mapping resource="Item.hbm.xml" />
+		
+		
+		<mapping class="ua.lviv.lgs.one_to_many.Post" />
+		<mapping class="ua.lviv.lgs.one_to_many.Comment" />
+
+		
 		
 	</session-factory>
 </hibernate-configuration>
